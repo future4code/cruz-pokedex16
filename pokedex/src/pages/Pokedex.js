@@ -15,9 +15,9 @@ const Pokedex = () => {
         <Header/>
         <Image
         cursor='pointer' 
-        h='50px' 
-        marginTop='-75px' 
-        marginLeft='30px' 
+        h='70px' 
+        marginTop='-95px' 
+        marginLeft='25px' 
         src={imagem_pokedex_aberta} 
         onClick={() => goToHomePage(history)}
         />
