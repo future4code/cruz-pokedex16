@@ -14,8 +14,8 @@ return(
 
     <Box
         h='110px' bgGradient="linear(blue.600 30%, #006F80 25%, green.400 100%)">
-        <Image h='100px' marginLeft='540px' src={imagem_logo} alt='logo' />
-        <IconButton
+        <Image h='100px' marginLeft='540px' src={imagem_logo} />
+        {/* <IconButton
         onClick={() => goToPokedexPage(history)}
         variant='ghost'
         bgGradient="linear(#FF0000 50%, white 25%, white 100%)"
@@ -27,7 +27,7 @@ return(
         }} 
         icon={<SiPokemon size='7em' color='black'/>} 
         marginTop='-120px' marginLeft='20px' 
-        >Pokedex</IconButton>
+        >Pokedex</IconButton> */}
     </Box>
 )
 
