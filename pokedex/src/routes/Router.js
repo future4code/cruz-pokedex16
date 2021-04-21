@@ -1,8 +1,7 @@
-import { Heading, Box } from '@chakra-ui/layout'
+import { Heading } from '@chakra-ui/layout'
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import DetalhesPokemons from '../pages/DetalhesPokemon'
-import Header from '../pages/Header'
 import Home from '../pages/Home'
 import Pokedex from '../pages/Pokedex'
 

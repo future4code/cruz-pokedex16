@@ -31,7 +31,7 @@ const Pokedex = () => {
           />
         </Tooltip>
 
-        <Box marginTop='25px'>
+        <Box bg='gray.200' marginTop='25px'>
         <Text>Pokedex</Text>
         </Box>
       </Box>

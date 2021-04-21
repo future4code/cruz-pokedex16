@@ -5,7 +5,7 @@ import Router from './routes/Router'
 const App = () => {
   return (
     <ChakraProvider>
-      <Box>
+      <Box minH='750px'>
         <Router />
       </Box>
     </ChakraProvider>
