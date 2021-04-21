@@ -14,10 +14,10 @@ import { useRequestData } from '../hooks/useRequestData'
 const Home = () => {
 
   const history = useHistory();
-  const pokemonList = useRequestData('/pokemon?limit=100', [])
+  const pokemonList = useRequestData('/pokemon?limit=30', [])
 
   const pokemonsCards = pokemonList.results && pokemonList.results.length > 0 && pokemonList.results.map((pokemon) => {
-    return <CardsPokemon key={pokemon.name} name={pokemon.name} />
+    return <CardsPokemon key={pokemon.name} name={pokemon.name} types={pokemon.types} />
             })
 
   return (
