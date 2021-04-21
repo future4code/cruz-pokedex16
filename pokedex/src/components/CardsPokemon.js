@@ -24,7 +24,6 @@ const CardsPokemon = (props) => {
     
     const history = useHistory();   
     
-    console.log(pokemon)
     return (
         <Box 
         bg='white' 
