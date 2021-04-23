@@ -1,12 +1,13 @@
-import { Heading, Box, Text, Center } from '@chakra-ui/layout'
-import { Button, IconButton } from '@chakra-ui/button'
+import React from 'react'
+import { Box, Text, Center } from '@chakra-ui/layout'
+import { IconButton } from '@chakra-ui/button'
 import { Spinner, Tooltip } from "@chakra-ui/react"
 import { Image } from '@chakra-ui/image'
-import React from 'react'
 import { useHistory } from "react-router-dom"
 import { useRequestData } from '../hooks/useRequestData'
 import { CgPokemon } from 'react-icons/cg'
 import { SiPokemon } from 'react-icons/si'
+import {textoShiny} from '../constants/Textos'
 import {
     Popover,
     PopoverTrigger,
@@ -52,19 +53,27 @@ const CardsPokemon = (props) => {
                             </Tooltip>
                         </Center>
                     </PopoverTrigger>
-                    <PopoverContent>
+                    <PopoverContent bgGradient='linear(blue.600 30%, #006F80 25%, green.400 70%)'>
                         <PopoverArrow />
                         <PopoverCloseButton />
-                            <PopoverHeader><b>Shiny {name}</b></PopoverHeader>
+                            <PopoverHeader><Center><b>Shiny {name}</b></Center></PopoverHeader>
                             <PopoverBody>
+                                    <Image
+                                    marginTop='30px' 
+                                    marginLeft='230px' 
+                                    boxSize="50px" 
+                                    src={pokemon.sprites.versions['generation-v']
+                                    ['black-white'].animated.back_shiny}/>
                                 <Center>
-                                    <Image 
+                                    <Image
+                                    marginTop='-80px' 
                                     marginLeft='10px' 
                                     boxSize="150px" 
                                     src={pokemon.sprites.versions['generation-v']
-                                    ['black-white'].animated.front_shiny} />
+                                    ['black-white'].animated.front_shiny}/>
                                 </Center>
                             </PopoverBody>
+                            <PopoverFooter borderRadius='10px' bg='gray.300' margin='5px'><b>Shiny:</b> {textoShiny}</PopoverFooter>
                     </PopoverContent>
                 </Popover>
                     ) : 
@@ -126,7 +135,9 @@ const CardsPokemon = (props) => {
                 bgGradient="linear(#FF0000 65%, white 25%, white 0%)"
                 color='black'
                 >
-                    <IconButton 
+                    <IconButton
+                        margin='0'
+                        padding='0'
                         h='35px'
                         w='70px' 
                         bg='white'
