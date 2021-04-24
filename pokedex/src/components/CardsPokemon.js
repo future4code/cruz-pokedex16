@@ -4,6 +4,7 @@ import { Spinner, Tooltip } from "@chakra-ui/react"
 import { Image } from '@chakra-ui/image'
 import React from 'react'
 import { useHistory } from "react-router-dom"
+import { goToPokemonDetail } from "../routes/coodinator"
 import { useRequestData } from '../hooks/useRequestData'
 import { CgPokemon } from 'react-icons/cg'
 import { SiPokemon } from 'react-icons/si'
@@ -131,6 +132,7 @@ const CardsPokemon = (props) => {
                         w='70px' 
                         bg='white'
                         icon={<SiPokemon size='5em' color='black'/>}
+                        onClick={() => goToPokemonDetail(history)}
                         _hover={{
                             bgGradient:"linear(#FF0000 55%, white 25%, white 0%)" 
                         }}
