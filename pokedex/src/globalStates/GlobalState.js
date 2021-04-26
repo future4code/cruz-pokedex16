@@ -2,32 +2,28 @@ import GlobalStateContext from "./GlobalStateContexts"
 import { useState} from "react"
 import axios from "axios"
 import { baseUrl } from "../constants/url"
-// import { baseUrl } from '../constants/url'
-// import axios from "react"
 
 const GlobalState = (props) => {
 
     // const pokemon = useRequestData(`/pokemon/${name}`, [])
 
-    const [pokemon, setPokemon] = useState({})
+    const [pokemon, setPokemon] = useState([])
     
     const getDetailPokemon = () => {
         axios
-        .get(`${baseUrl}/pokemon/bulbasaur`)
+        .get(`${baseUrl}/pokemon/pikachu`)
         .then((res) => {
-                console.log(res.data)
-                setPokemon(res.data)
-            })
-            .catch((err) => console.log(err.response))
-        }
-        
-        console.log(pokemon)
-        
-        const states = {pokemon}
-        const setters = {setPokemon}
-        const requests = { getDetailPokemon}
-        const data = { states, setters, requests}
-        
+            setPokemon(res.data)
+        })
+        .catch((err) => console.log(err.response))
+    }
+    
+    const states = {pokemon}
+    const setters = {setPokemon}
+    const requests = { getDetailPokemon}
+    const data = { states, setters, requests}
+    console.log(data)
+    
     return(
         <GlobalStateContext.Provider value={data} >
             {props.children}

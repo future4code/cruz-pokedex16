@@ -23,7 +23,7 @@ import {
 const CardsPokemon = (props) => {
     const {name} = props;
     const pokemon = useRequestData(`/pokemon/${name}`, [])
-    
+
     const history = useHistory();   
     
     return (
@@ -48,7 +48,10 @@ const CardsPokemon = (props) => {
                             color='white'
                             >
                                 <Image marginLeft='10px' 
-                                boxSize="40px" 
+                                boxSize="40px"
+                                _hover={{
+                                    marginLeft:'20px'
+                                }}  
                                 src={pokemon.sprites.versions['generation-v']
                                 ['black-white'].animated.front_shiny}/>
                             </Tooltip>
@@ -59,7 +62,7 @@ const CardsPokemon = (props) => {
                         <PopoverCloseButton />
                             <PopoverHeader><Center><b>Shiny {name}</b></Center></PopoverHeader>
                             <PopoverBody>
-                                    <Image
+                                    <Image 
                                     marginTop='30px' 
                                     marginLeft='230px' 
                                     boxSize="50px" 
@@ -90,7 +93,7 @@ const CardsPokemon = (props) => {
                 <Center 
                 marginTop='-17px' >
                     <Image 
-                    boxSize="90px" 
+                    boxSize="90px"
                     src={pokemon.sprites.versions['generation-v']
                     ['black-white'].animated.front_default} />
                 </Center>
