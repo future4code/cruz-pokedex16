@@ -1,5 +1,4 @@
-import { Heading, Box, Text } from '@chakra-ui/layout'
-import { Button, IconButton } from '@chakra-ui/button'
+import { Box } from '@chakra-ui/layout'
 import { Tooltip, Grid } from "@chakra-ui/react"
 import { Image } from '@chakra-ui/image'
 import React from 'react'
@@ -21,7 +20,7 @@ const Home = () => {
             })
 
   return (
-      <Box bg='gray.300'>
+      <Box w='100%' bg='gray.300'>
         <Header/>
 
         <Tooltip 
