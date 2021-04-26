@@ -17,33 +17,59 @@ const DetalhesPokemons = (props) => {
 
 
   return (
-      <Box>
-        <Box
+      <Box minH='625px' bg='gray.300'>
+        <Header/>
+        <Center marginTop='100px'>
+          <Box
+          w='500px'
           bg='white'
-          h='200px'
+          h='300px'
           border='5px solid black'
           templatecolumns="repeat(6, 1fr)"
           borderRadius='15px'>
-          <Header/>
-        {states.pokemon.sprites && states.pokemon.sprites.front_default ? (
-          <Center
-            marginTop='-17px' >
-            <Image
-              boxSize="90px"
-              src={states.pokemon.sprites.versions['generation-v']
-              ['black-white'].animated.front_default} />
-          </Center>
-        ) :
-          <Spinner
-            marginTop='50px'
-            marginLeft='70px'
-            thickness="5px"
-            speed="0.70s"
-            emptyColor="gray.300"
-            color="#FF0000"
-            size="xl"
-          />}
-        </Box>
+            {states.pokemon.sprites && states.pokemon.sprites.front_default ? (
+              <Box>
+                <Image
+                marginLeft='25px'
+                  marginTop='20px'
+                  boxSize="90px"
+                  src={states.pokemon.sprites.versions['generation-v']
+                  ['black-white'].animated.front_default} />
+              </Box>
+              ) :
+              <Spinner
+                marginTop='10px'
+                marginLeft='70px'
+                thickness="5px"
+                speed="0.70s"
+                emptyColor="gray.300"
+                color="#FF0000"
+                size="xl"
+            />}
+                <Text marginLeft='30px'>
+                  <b>{states.pokemon.name}</b>
+                </Text>
+            {states.pokemon.sprites && states.pokemon.sprites.front_default ? (
+              <Box>
+                <Image 
+                marginLeft='25px'
+                marginTop='35px'
+                boxSize="90px"
+                src={states.pokemon.sprites.versions['generation-v']
+                ['black-white'].animated.back_default} />
+              </Box>
+              ) :
+              <Spinner
+                marginTop='50px'
+                marginLeft='70px'
+                thickness="5px"
+                speed="0.70s"
+                emptyColor="gray.300"
+                color="#FF0000"
+                size="xl"
+            />}
+          </Box>
+        </Center>
       </Box>
   );
 }

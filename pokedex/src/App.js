@@ -7,7 +7,7 @@ const App = () => {
   return (
     <GlobalState>
       <ChakraProvider>
-        <Box minH='750px'>
+        <Box minH='625px'>
           <Router />
         </Box>
       </ChakraProvider>
